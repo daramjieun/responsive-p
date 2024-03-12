@@ -1,0 +1,96 @@
+.header{
+    /* position 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 3px #000;
+    /* 다른 요소와 겹쳤을 때 상대적으로 높은 위치에 보이게 */
+    z-index: 20;
+}
+.header__wrapper{
+    /* flex 컨테이너 정렬 방식 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 16px;
+}
+.header__start{
+    height: 40px;
+    line-height: 40px;
+}
+.header__hamburger{
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+    padding: 0;
+}
+.header__title{
+    font-size: 1.2rem;
+    margin-left: 6px;
+}
+.header__center{
+    /* header 너비에 위치만 따라가도록 너비를 %로 지정 */
+    /* 안에 있는 input의 크기는 따로 정하면 된다. */
+    width: 50%;
+}
+.header__form{
+    display: flex;
+    max-width: 100%;
+}
+.header__input--text{
+    width: calc(100% - 60px);
+    height: 40px;
+    padding: 0 6px;
+    border: 1px solid #8f8f8f;
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+}
+.header__input--button{
+    width: 60px;
+    height: 40px;
+    padding: 0 6px;
+    border: 1px solid #8f8f8f;
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+}
+.header__end{
+    display: flex;
+}
+.header__search{
+    /* 처음에는 보이지 않고, 화면이 줄었을 때 보이게 */
+    display: none;
+    margin-right: 5px;
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+.header__profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: gold;
+    /* 이미지가 있으면 background image 넣어 준다. */
+    /* background-image: url(); */
+    /* background-size: px px; */
+}
+/* 화면 크기가 800px 이하일 때 */
+@media  screen and (max-width: 800px) {
+    /* 헤더 타이틀 요소 화면에서 숨김 */
+    .header__title{
+        display: none;
+    }
+}
+/* 화면 크기가 400px 이하일 때 */
+@media  screen and (max-width: 400px) {
+    /* 검색창 요소 화면에서 숨김 */
+    .header__center{
+        display: none;
+    }
+    /* 돋보기 요소 화면에 나타남 */
+    .header__search{
+        display: block;
+    }
+}

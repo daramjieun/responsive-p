@@ -1,0 +1,55 @@
+.nav{
+    /* 고정 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* 헤더 보다 우선순위 아래에 */
+    z-index: 10;
+}
+.nav__wrapper{
+    /* 어무리 작아도 최소 200px */
+    min-width: 200px;
+    /* 아무리 작아도 최소 화면 높이 */
+    min-height: 100vh;
+    background-color: #f8f8f8;
+    padding: 80px 0 0 0;
+    list-style: none;
+}
+/* <li>에도 선택자를 줘도 되지만 
+다양한 선택자를 하기 위해서 하위 선택자 사용 */
+.nav__wrapper li{
+    display: flex;
+    padding: 10px 16px;
+}
+.nav__wrapper li:hover{
+    background-color: #eaeaea;
+}
+.nav__icon{
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
+.nav__menu{
+    margin-left: 8px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: transparent;
+}
+/* 화면이 800px 이하 */
+@media screen and (max-width: 800px){
+    /* nav 메뉴 화면에서 숨김 */
+    .nav__menu{
+        display: none;
+    }
+    .nav__wrapper{
+        /* 콘텐츠 크기 만큼만 남고 사라짐 */
+        min-width: 0;
+    }
+}
+/* 화면이 400px 이하 */
+@media screen and (max-width: 400px){
+    .nav__wrapper{
+        /* nav 화면에서 숨김 */
+    display: none;
+    }
+}
